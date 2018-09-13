@@ -7,7 +7,18 @@
 * max([-1, 0]);   // 0
 */
 const max = arr => {
-  /* your logic here...*/
+  /*  let index = arr.indexOf(Infinity);
+    if (index > -1)
+      arr.splice(index, 1);
+    let indexNan = arr.indexOf(NaN);
+     if (indexNan > -1)
+      arr.splice(indexNan, 1);
+    */
+ let array= arr.filter(function (item, i, ar) {
+    return isFinite(item);
+  });
+
+  return Math.max(...array);
 };
 
 export default max;
